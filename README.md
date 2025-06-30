@@ -5,13 +5,13 @@ Este projeto implementa um cálculo de **distância fuzzy** entre sequências de
 
 ---
 
-## 📥 Entrada
+## Entrada
 
 - Arquivo FASTA com as sequências de DNA.
 
 ---
 
-## ⚙️ Algoritmo
+## Algoritmo
 
 1. **Cálculo de 4 características fuzzy por sequência**:
    - **GC Content**: proporção de bases G e C.
@@ -42,18 +42,29 @@ Este projeto implementa um cálculo de **distância fuzzy** entre sequências de
    - \[
      \text{distância} = 1 - \text{Integral de Sugeno}
      \]
-
 ---
 
-## 📤 Saídas
+## Saídas
 
 - `fuzzy_features.csv`: tabela com os valores fuzzy de cada critério para cada sequência.
 - `output.csv`: matriz de distâncias fuzzy entre todas as sequências.
 
 ---
 
-## 🔧 Parâmetros Importantes
+## Parâmetros Importantes
+  
+  **def kmers(seq, k=2)**
+k define o número de nucleotídeos usados para gerar k-mers. Valores maiores aumentam a especificidade, mas exigem mais memória.
 
-- **Tamanho do k-mer**:
-  ```python
-  def kmers(seq, k=2)
+ **mu_C = {'GC': 0.2,'Entropy': 0.3,'CG': 0.2,'Kmer': 0.3}** 
+ Os pesos devem somar 1. Critérios mais importantes devem ter maior peso.
+
+---
+## Exemplo de uso
+fuzzy_distance_fasta("input.fasta", "output.csv", "fuzzy_features.csv")
+
+---
+## Requisito 
+Biopython
+SciPy
+datasketch
