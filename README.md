@@ -1,4 +1,4 @@
-# Dist-ncia-baseada-em-crit-rios-fuzzy-
+
 # 🧬 Distância Fuzzy entre Sequências de DNA
 
 Este projeto implementa um cálculo de **distância fuzzy** entre sequências de DNA com base em critérios biológicos e métodos de lógica fuzzy. As distâncias são calculadas sem a necessidade de alinhamento entre sequências, utilizando a **Integral de Sugeno**.
